@@ -3,101 +3,58 @@ libXt
 Xorg X toolkit library
 
 Runtime requirements:
-  cygwin-1.5.20-1
-  libICE6-1.0.0-1
-  libSM6-1.0.0-1
-  libX11_6-1.0.0-1
+  cygwin-1.5.22-1
+  libICE6-1.0.2-1
+  libSM6-1.0.2-1
+  libX11_6-1.1.1-1
 
 Build requirements:
 (besides corresponding devel packages)
-  cygwin-1.5.20-1
-  autoconf2.5-2.59-2
+  cygwin-1.5.22-1
+  autoconf2.5-2.60-1
   automake1.9-1.9.6-1
-  binutils-20050610-1
-  cygport-0.2.2-1
+  binutils-20060817-1
+  cygport-0.2.6-1
   gawk-3.1.5-2
   gcc-core-3.4.4-1
-  libtool1.5-1.5.22-1
-  make-3.80-1
-  pkg-config-0.20-1
+  libtool1.5-1.5.23a-1
+  make-3.81-1
+  pkg-config-0.21-1
   sed-4.1.5-1
-  xorg-util-macros-1.0.2-1
-  xproto-7.0.4-1
+  xorg-util-macros-1.1.2-1
+  xproto-7.0.9-1
 
 Canonical website:
   http://xorg.freedesktop.org/
 
 Canonical download:
-  http://xorg.freedesktop.org/releases/individual/
+  http://xorg.freedesktop.org/releases/individual/lib/
 
 -------------------------------------------
 
 Build instructions:
-  unpack libXt-1.0.0-X-src.tar.bz2
+  unpack libXt-1.0.4-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./libXt-1.0.0-X.cygport all
+  cygport ./libXt-1.0.4-X.cygport all
 
 This will create:
-  /usr/src/libXt-1.0.0-X-src.tar.bz2
-  /usr/src/libXt-1.0.0-X.tar.bz2
-  /usr/src/libXt-doc-1.0.0-X.tar.bz2
-  /usr/src/libXt6-1.0.0-X.tar.bz2
+  /usr/src/libXt-1.0.4-X-src.tar.bz2
+  /usr/src/libXt-1.0.4-X.tar.bz2
+  /usr/src/libXt-devel-1.0.4-X.tar.bz2
+  /usr/src/libXt6-1.0.4-X.tar.bz2
+  /usr/src/makestrs-1.0.4-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the main package:
+Files included in the binary packages:
 
-  /usr/bin/makestrs.exe
-  /usr/include/X11/CallbackI.h
-  /usr/include/X11/Composite.h
-  /usr/include/X11/CompositeP.h
-  /usr/include/X11/ConstrainP.h
-  /usr/include/X11/Constraint.h
-  /usr/include/X11/ConvertI.h
-  /usr/include/X11/Core.h
-  /usr/include/X11/CoreP.h
-  /usr/include/X11/CreateI.h
-  /usr/include/X11/EventI.h
-  /usr/include/X11/HookObjI.h
-  /usr/include/X11/InitialI.h
-  /usr/include/X11/Intrinsic.h
-  /usr/include/X11/IntrinsicI.h
-  /usr/include/X11/IntrinsicP.h
-  /usr/include/X11/Object.h
-  /usr/include/X11/ObjectP.h
-  /usr/include/X11/PassivGraI.h
-  /usr/include/X11/RectObj.h
-  /usr/include/X11/RectObjP.h
-  /usr/include/X11/ResConfigP.h
-  /usr/include/X11/ResourceI.h
-  /usr/include/X11/SelectionI.h
-  /usr/include/X11/Shell.h
-  /usr/include/X11/ShellI.h
-  /usr/include/X11/ShellP.h
-  /usr/include/X11/StringDefs.h
-  /usr/include/X11/ThreadsI.h
-  /usr/include/X11/TranslateI.h
-  /usr/include/X11/VarargsI.h
-  /usr/include/X11/Vendor.h
-  /usr/include/X11/VendorP.h
-  /usr/include/X11/Xtos.h
-  /usr/lib/libXt.dll.a
-  /usr/lib/libXt.la
-  /usr/lib/pkgconfig/xt.pc
-  /usr/share/doc/Cygwin/libXt-1.0.0.README
-  /usr/share/doc/libXt-1.0.0/COPYING
-  /usr/share/doc/libXt-1.0.0/ChangeLog
-  /usr/share/doc/libXt-1.0.0/INSTALL
-
-Files included in the runtime package:
-
-  /usr/bin/cygXt-6.dll
-
-Files included in the doc package:
-
-  /usr/share/man/man1/makestrs.1.gz
+(libXt)
+  /usr/share/doc/Cygwin/libXt-1.0.4.README
+  /usr/share/doc/libXt-1.0.4/COPYING
+  /usr/share/doc/libXt-1.0.4/ChangeLog
+  /usr/share/doc/libXt-1.0.4/INSTALL
   /usr/share/man/man3/MenuPopdown.3.gz
   /usr/share/man/man3/MenuPopup.3.gz
   /usr/share/man/man3/XtAddActions.3.gz
@@ -366,9 +323,60 @@ Files included in the doc package:
   /usr/share/man/man3/XtWindowOfObject.3.gz
   /usr/share/man/man3/XtWindowToWidget.3.gz
 
+(libXt6)
+  /usr/bin/cygXt-6.dll
+
+(libXt-devel)
+  /usr/include/X11/CallbackI.h
+  /usr/include/X11/Composite.h
+  /usr/include/X11/CompositeP.h
+  /usr/include/X11/ConstrainP.h
+  /usr/include/X11/Constraint.h
+  /usr/include/X11/ConvertI.h
+  /usr/include/X11/Core.h
+  /usr/include/X11/CoreP.h
+  /usr/include/X11/CreateI.h
+  /usr/include/X11/EventI.h
+  /usr/include/X11/HookObjI.h
+  /usr/include/X11/InitialI.h
+  /usr/include/X11/Intrinsic.h
+  /usr/include/X11/IntrinsicI.h
+  /usr/include/X11/IntrinsicP.h
+  /usr/include/X11/Object.h
+  /usr/include/X11/ObjectP.h
+  /usr/include/X11/PassivGraI.h
+  /usr/include/X11/RectObj.h
+  /usr/include/X11/RectObjP.h
+  /usr/include/X11/ResConfigP.h
+  /usr/include/X11/ResourceI.h
+  /usr/include/X11/SelectionI.h
+  /usr/include/X11/Shell.h
+  /usr/include/X11/ShellI.h
+  /usr/include/X11/ShellP.h
+  /usr/include/X11/StringDefs.h
+  /usr/include/X11/ThreadsI.h
+  /usr/include/X11/TranslateI.h
+  /usr/include/X11/VarargsI.h
+  /usr/include/X11/Vendor.h
+  /usr/include/X11/VendorP.h
+  /usr/include/X11/Xtos.h
+  /usr/lib/libXt.dll.a
+  /usr/lib/libXt.la
+  /usr/lib/pkgconfig/xt.pc
+
+(makestrs)
+  /usr/bin/makestrs.exe
+  /usr/share/man/man1/makestrs.1.gz
+
 ------------------
 
 Port Notes:
+
+----- version 1.0.4-1 -----
+X11R7.2 version bump.
+
+----- version 1.0.2-1 -----
+X11R7.1 version bump.
 
 ----- version 1.0.0-1 -----
 Initial Cygwin release of modular X11R7.0.

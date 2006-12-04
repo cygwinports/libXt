@@ -1,4 +1,3 @@
 category: X11
-requires: cygwin libICE libSM libX11 xproto
-sdesc: "Xorg X Toolkit library (development)"
+sdesc: "Xorg X Toolkit library (documentation)"
 ldesc: "Xorg X Toolkit library"
