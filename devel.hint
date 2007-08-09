@@ -1,5 +1,5 @@
 category: X11
-requires: cygwin libICE-devel libSM-devel libX11-devel xproto
+requires: cygwin libXt6 libICE-devel libSM-devel libX11-devel xproto
 external-source: libXt
 sdesc: "Xorg X Toolkit library (development)"
 ldesc: "Xorg X Toolkit library"
