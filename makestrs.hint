@@ -1,5 +1,0 @@
-category: X11
-requires: libgcc1
-external-source: libXt
-sdesc: "X.Org string table C source generator"
-ldesc: "X.Org X Toolkit library"
