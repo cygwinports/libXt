@@ -3,7 +3,7 @@ inherit xorg
 PKG_NAMES="${PN} ${PN}6 ${PN}-devel"
 PKG_HINTS="setup runtime devel"
 libXt6_CONTENTS='usr/bin/cygXt-6.dll usr/share/doc/'
-libXt_devel_CONTENTS="usr/bin/makestrs.exe usr/include/ usr/lib/ usr/share/man/"
+libXt_devel_CONTENTS="usr/include/ usr/lib/ usr/share/man/"
 
 CYGCONF_ARGS="
 	--with-appdefaultdir=/etc/X11/app-defaults
