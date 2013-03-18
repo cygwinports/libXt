@@ -1,7 +1,15 @@
 inherit xorg
 
+NAME="libXt"
+VERSION=1.1.3
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="X.Org X Toolkit library"
+DESCRIPTION="X.Org X Toolkit library"
+
+PATCH_URI="1.1.3-cygwin64.patch"
+
 PKG_NAMES="${PN}6 ${PN}-devel"
-PKG_HINTS="runtime devel"
 libXt6_CONTENTS='usr/bin/cygXt-6.dll usr/share/doc/'
 libXt_devel_CONTENTS="usr/include/ usr/lib/ usr/share/man/"
 

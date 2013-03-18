@@ -1,5 +1,0 @@
-category: X11
-requires: libXt6 libICE-devel libSM-devel libX11-devel xproto
-external-source: libXt
-sdesc: "X.Org X Toolkit library (development)"
-ldesc: "X.Org X Toolkit library"

@@ -1,5 +1,0 @@
-category: X11
-requires: libICE6 libSM6 libX11_6
-external-source: libXt
-sdesc: "X.Org X Toolkit library (runtime)"
-ldesc: "X.Org X Toolkit library"

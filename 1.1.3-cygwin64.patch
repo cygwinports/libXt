@@ -1,0 +1,23 @@
+--- origsrc/libXt-1.1.3/src/Initialize.c	2012-03-16 00:52:07.000000000 -0500
++++ src/libXt-1.1.3/src/Initialize.c	2013-03-18 02:13:19.875139300 -0500
+@@ -245,11 +245,20 @@ void _XtInherit(void)
+  * cygwin-xfree: http://www.cygwin.com/ml/cygwin-xfree/2003-10/msg00000.html
+  */
+ 
++#ifdef __x86_64__
++asm (".data\n\
++ .globl _XtInherit        \n\
++ _XtInherit:              \n\
++    jmp *_y(%rip)         \n\
++_y: .quad __XtInherit     \n\
++    .text                 \n");
++#else
+ asm (".data\n\
+  .globl __XtInherit        \n\
+  __XtInherit:      jmp *_y \n\
+   _y: .long ___XtInherit   \n\
+     .text                 \n");
++#endif
+ 
+ #define _XtInherit __XtInherit
+ #endif
