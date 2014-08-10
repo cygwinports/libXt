@@ -1,0 +1,50 @@
+--- origsrc/libXt-1.1.4/include/X11/IntrinsicP.h	2013-05-30 20:17:00.000000000 -0500
++++ src/libXt-1.1.4/include/X11/IntrinsicP.h	2014-07-30 18:49:00.545468200 -0500
+@@ -266,7 +266,12 @@ extern Widget _XtWindowedAncestor( /* in
+     Widget 		/* object */
+ );
+ 
+-extern void _XtInherit(
++#if (defined(_WIN32) || defined(__CYGWIN__)) && !defined(LIBXT_COMPILATION)
++__declspec(dllimport)
++#else
++extern
++#endif
++void _XtInherit(
+     void
+ );
+ 
+--- origsrc/libXt-1.1.4/src/Initialize.c	2013-05-30 20:17:00.000000000 -0500
++++ src/libXt-1.1.4/src/Initialize.c	2014-08-10 11:18:27.464634600 -0500
+@@ -245,11 +245,20 @@ void _XtInherit(void)
+  * cygwin-xfree: http://www.cygwin.com/ml/cygwin-xfree/2003-10/msg00000.html
+  */
+ 
++#ifdef __x86_64__
++asm (".section .trampoline, \"dwx\" \n\
++ .globl _XtInherit        \n\
++ _XtInherit:              \n\
++    jmp *_y(%rip)         \n\
++_y: .quad __XtInherit     \n\
++    .text                 \n");
++#else
+ asm (".data\n\
+  .globl __XtInherit        \n\
+  __XtInherit:      jmp *_y \n\
+   _y: .long ___XtInherit   \n\
+     .text                 \n");
++#endif
+ 
+ #define _XtInherit __XtInherit
+ #endif
+--- origsrc/libXt-1.1.4/src/Makefile.am	2013-05-30 20:17:00.000000000 -0500
++++ src/libXt-1.1.4/src/Makefile.am	2014-07-30 18:49:25.771671500 -0500
+@@ -7,7 +7,7 @@ SRCH_DEFINES = -DXFILESEARCHPATHDEFAULT=
+ ERRORDB_DEFINES = -DERRORDB=\"$(ERRORDBDIR)/XtErrorDB\"
+ 
+ AM_CFLAGS = $(CWARNFLAGS) $(XT_CFLAGS) $(SRCH_DEFINES) $(ERRORDB_DEFINES) \
+-	$(XTMALLOC_ZERO_CFLAGS)
++	$(XTMALLOC_ZERO_CFLAGS) -DLIBXT_COMPILATION
+ 
+ AM_CPPFLAGS = -I$(top_srcdir)/include/ -I$(top_srcdir)/include/X11 \
+ 	      -I$(top_builddir)/include -I$(top_builddir)/include/X11
